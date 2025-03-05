@@ -10,9 +10,11 @@ public class CompasService {
     public CompasService(Compas compas) {
         this.compas = compas;
     }
-    public WorldSide getSide(){
+
+    public WorldSide getSide() {
         return compas.getSide();
     }
+
     public WorldSide getWorldSide(int operation) throws ExampleException {
         return compas.changeSide(operation);
     }

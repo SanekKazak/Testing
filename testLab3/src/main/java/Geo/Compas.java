@@ -2,9 +2,6 @@ package Geo;
 
 import Geo.Exceptions.ExampleException;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 public class Compas extends GeoItem {
 
     public Compas(WorldSide worldSide) {
