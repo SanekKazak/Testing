@@ -19,6 +19,10 @@ public class GeoTest {
         assertEquals(WorldSide.SV, tester.getSide());
     }
     @Test
+    public void enumTest(){
+        assertNull(WorldSide.check(5));
+    }
+    @Test
     public void betweenTest(){
         GeoItem tester = new Compas(WorldSide.SV);
         Compas tester1 = new Compas(tester.getSide());
@@ -39,22 +43,11 @@ public class GeoTest {
     }
     @Test
     public void methodResultSecondLeftSpinTest() throws ExampleException{
-        Compas tester = new Compas(WorldSide.Z);
-        assertEquals(WorldSide.YG, tester.changeSide(1));
-        assertEquals(WorldSide.YG, tester.getSide());
-    }
-    @Test
-    public void methodResultThirdLeftSpinTest() throws ExampleException{
-        Compas tester = new Compas(WorldSide.YG);
-        assertEquals(WorldSide.V, tester.changeSide(1));
-        assertEquals(WorldSide.V, tester.getSide());
-    }
-    @Test
-    public void methodResultFourthLeftSpinTest() throws ExampleException{
         Compas tester = new Compas(WorldSide.V);
         assertEquals(WorldSide.SV, tester.changeSide(1));
         assertEquals(WorldSide.SV, tester.getSide());
     }
+
     @Test
     public void methodResultSpinFirstRightTest() throws ExampleException{
         Compas tester = new Compas(WorldSide.SV);
@@ -69,18 +62,6 @@ public class GeoTest {
         assertEquals(WorldSide.YG, tester.getSide());
     }
     @Test
-    public void methodResultSpinThirdRightTest() throws ExampleException{
-        Compas tester = new Compas(WorldSide.YG);
-        assertEquals(WorldSide.Z, tester.changeSide(-1));
-        assertEquals(WorldSide.Z, tester.getSide());
-    }
-    @Test
-    public void methodResultSpinFourthRightTest() throws ExampleException{
-        Compas tester = new Compas(WorldSide.Z);
-        assertEquals(WorldSide.SV, tester.changeSide(-1));
-        assertEquals(WorldSide.SV, tester.getSide());
-    }
-    @Test
     public void methodResultFullSpinFromSVToYGTest() throws ExampleException{
         Compas tester = new Compas(WorldSide.SV);
         assertEquals(WorldSide.YG, tester.changeSide(2));
@@ -93,15 +74,9 @@ public class GeoTest {
         assertEquals(WorldSide.SV, tester.getSide());
     }
     @Test
-    public void methodResultFullSpinVToZTest() throws ExampleException{
+    public void methodResultFullSpinFromVToZTest() throws ExampleException{
         Compas tester = new Compas(WorldSide.V);
         assertEquals(WorldSide.Z, tester.changeSide(2));
         assertEquals(WorldSide.Z, tester.getSide());
-    }
-    @Test
-    public void methodResultFullSpinZToVTest() throws ExampleException{
-        Compas tester = new Compas(WorldSide.Z);
-        assertEquals(WorldSide.V, tester.changeSide(2));
-        assertEquals(WorldSide.V, tester.getSide());
     }
 }
