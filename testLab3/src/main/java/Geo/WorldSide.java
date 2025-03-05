@@ -10,19 +10,15 @@ public enum WorldSide {
     SV(1),
     V(4),
     Z(2);
-    private int value;
+    private final int value;
 
     public static WorldSide check(Integer value){
-        switch(value){
-            case(1):
-                return WorldSide.SV;
-            case(2):
-                return WorldSide.Z;
-            case(3):
-                return WorldSide.YG;
-            case(4):
-                return WorldSide.V;
-        }
-        return null;
+        return switch (value) {
+            case (1) -> WorldSide.SV;
+            case (2) -> WorldSide.Z;
+            case (3) -> WorldSide.YG;
+            case (4) -> WorldSide.V;
+            default -> null;
+        };
     }
 }
